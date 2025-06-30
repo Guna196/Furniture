@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurniStore - Products</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Apply Inter font globally */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Site Logo/Name linking to Home -->
+            <a href="index.html" class="text-2xl font-bold text-gray-800 rounded-lg p-2 hover:bg-gray-50 transition-colors">FurniStore</a>
+            <!-- Navigation Links -->
+            <nav>
+                <a href="index.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg shadow-sm hover:bg-gray-300 transition-colors font-medium mr-2">Home</a>
+                <a href="products.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md font-medium">Products</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Listing Section - Displays multiple product cards -->
+    <main class="flex-grow p-4">
+        <section class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Our Furniture Collection</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product Card 1: Comfy Cloud Sofa -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105 duration-300">
+                    <img src="https://placehold.co/600x400/edf6f9/219ebc?text=Modern+Sofa" alt="Modern Sofa" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Comfy Cloud Sofa</h3>
+                        <p class="text-gray-600 text-sm mb-3">Plush comfort for your living space.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-gray-900">$799.99</span>
+                            <span class="text-yellow-500">★★★★☆</span>
+                        </div>
+                        <!-- Link to Product Detail Page with a query parameter for product ID -->
+                        <a href="product-detail.html?product=sofa" class="block w-full text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: Minimalist Dining Table -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105 duration-300">
+                    <img src="https://placehold.co/600x400/fae0e4/ef476f?text=Minimalist+Table" alt="Minimalist Dining Table" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Minimalist Dining Table</h3>
+                        <p class="text-gray-600 text-sm mb-3">Sleek design for modern dining.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-gray-900">$499.99</span>
+                            <span class="text-yellow-500">★★★★★</span>
+                        </div>
+                        <a href="product-detail.html?product=table" class="block w-full text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3: ErgoPro Office Chair -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105 duration-300">
+                    <img src="https://placehold.co/600x400/e0f2fe/0284c7?text=Ergonomic+Chair" alt="Ergonomic Office Chair" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">ErgoPro Office Chair</h3>
+                        <p class="text-gray-600 text-sm mb-3">Supportive comfort for long hours.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-gray-900">$249.99</span>
+                            <span class="text-yellow-500">★★★★☆</span>
+                        </div>
+                        <a href="product-detail.html?product=chair" class="block w-full text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 4: Classic Wooden Bookshelf -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105 duration-300">
+                    <img src="https://placehold.co/600x400/d1e2c4/4caf50?text=Bookshelf" alt="Classic Bookshelf" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Classic Wooden Bookshelf</h3>
+                        <p class="text-gray-600 text-sm mb-3">Store your treasures in style.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-gray-900">$189.99</span>
+                            <span class="text-yellow-500">★★★☆☆</span>
+                        </div>
+                        <a href="product-detail.html?product=bookshelf" class="block w-full text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 FurniStore. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
