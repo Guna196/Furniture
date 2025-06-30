@@ -106,5 +106,19 @@
             <p>&copy; 2025 FurniStore. All rights reserved.</p>
         </div>
     </footer>
+     <script>
+        document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // In a real application, you would process the form data here (e.g., send to a server)
+            // For this simulation, we'll just redirect to the order placed page.
+
+            // Simulate a brief delay for processing
+            setTimeout(() => {
+                window.location.href = 'order-placed.html'; // Redirect to the order placed page
+            }, 500); // 0.5 second delay
+        });
+    </script>
 </body>
 </html>
+
