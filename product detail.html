@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurniStore - Product Detail</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Apply Inter font globally */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Site Logo/Name linking to Home -->
+            <a href="index.html" class="text-2xl font-bold text-gray-800 rounded-lg p-2 hover:bg-gray-50 transition-colors">FurniStore</a>
+            <!-- Navigation Link to go back to Product Listing -->
+            <nav>
+                <a href="products.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg shadow-sm hover:bg-gray-300 transition-colors font-medium">Back to Products</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Detail Section - Displays specific product information -->
+    <main class="flex-grow p-4">
+        <section class="container mx-auto px-4 py-8">
+            <div id="product-details" class="bg-white rounded-xl shadow-lg p-6 md:p-8 lg:p-10 flex flex-col md:flex-row items-center md:items-start gap-8">
+                <!-- Product Image Area -->
+                <div class="flex-shrink-0 w-full md:w-1/2 lg:w-2/5">
+                    <img id="product-image" src="https://placehold.co/700x500/cccccc/333333?text=Product+Image" alt="Product Image" class="w-full h-auto rounded-lg shadow-md object-cover">
+                </div>
+
+                <!-- Product Information Area -->
+                <div class="flex-grow w-full md:w-1/2 lg:w-3/5">
+                    <!-- Product Name -->
+                    <h2 id="product-name" class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Product Name</h2>
+                    <!-- Product Price -->
+                    <p id="product-price" class="text-3xl font-extrabold text-blue-600 mb-4">$0.00</p>
+                    <!-- Product Rating and Reviews -->
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-500 text-xl" id="product-rating">★★★★☆</span>
+                        <span class="text-gray-500 ml-2">(<span id="product-reviews">0</span> Reviews)</span>
+                    </div>
+                    <!-- Product Description -->
+                    <p id="product-description" class="text-gray-700 leading-relaxed mb-6 text-base md:text-lg">
+                        This is a detailed description of the product. It highlights its features, benefits, and specifications, providing customers with all the necessary information to make an informed purchase decision.
+                    </p>
+
+                    <!-- Key Features List -->
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Key Features:</h3>
+                        <ul id="product-features" class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>High-quality material</li>
+                            <li>Durable construction</li>
+                            <li>Modern design</li>
+                            <li>Easy assembly</li>
+                        </ul>
+                    </div>
+
+                    <!-- Call to Action Button to Checkout Page -->
+                    <a href="checkout.html" class="block w-full text-center bg-green-600 text-white text-xl px-8 py-4 rounded-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105 font-semibold">
+                        Add to Cart & Checkout
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 FurniStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to dynamically load product details based on URL parameter
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get product ID from URL query parameter (e.g., ?product=sofa)
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('product');
+
+            // Dummy product data (replace with actual data fetching in a real app)
+            const products = {
+                sofa: {
+                    name: "Comfy Cloud Sofa",
+                    price: "$799.99",
+                    rating: "★★★★☆",
+                    reviews: 125,
+                    description: "Experience unparalleled comfort with the Comfy Cloud Sofa. Its plush cushions and ergonomic design provide the perfect relaxation spot for your living room. Made with durable fabric and a sturdy frame, this sofa is built to last.",
+                    features: [
+                        "Premium fabric upholstery",
+                        "High-density foam cushions",
+                        "Solid wood frame",
+                        "Easy to clean",
+                        "Dimensions: 85\"W x 38\"D x 30\"H"
+                    ],
+                    image: "https://placehold.co/700x500/edf6f9/219ebc?text=Comfy+Cloud+Sofa"
+                },
+                table: {
+                    name: "Minimalist Dining Table",
+                    price: "$499.99",
+                    rating: "★★★★★",
+                    reviews: 98,
+                    description: "Add a touch of modern elegance to your dining area with the Minimalist Dining Table. Its sleek lines and smooth finish make it a perfect centerpiece for any contemporary home. Seats up to 6 people comfortably.",
+                    features: [
+                        "Smooth, durable tabletop",
+                        "Sturdy metal legs",
+                        "Easy assembly",
+                        "Scratch-resistant surface",
+                        "Dimensions: 60\"L x 36\"W x 30\"H"
+                    ],
+                    image: "https://placehold.co/700x500/fae0e4/ef476f?text=Minimalist+Dining+Table"
+                },
+                chair: {
+                    name: "ErgoPro Office Chair",
+                    price: "$249.99",
+                    rating: "★★★★☆",
+                    reviews: 210,
+                    description: "Boost your productivity and comfort with the ErgoPro Office Chair. Designed for ergonomic support, it features adjustable lumbar support, armrests, and seat height to fit your body perfectly during long working hours.",
+                    features: [
+                        "Adjustable lumbar support",
+                        "Breathable mesh back",
+                        "Padded armrests",
+                        "Smooth-rolling casters",
+                        "360-degree swivel"
+                    ],
+                    image: "https://placehold.co/700x500/e0f2fe/0284c7?text=ErgoPro+Office+Chair"
+                },
+                bookshelf: {
+                    name: "Classic Wooden Bookshelf",
+                    price: "$189.99",
+                    rating: "★★★☆☆",
+                    reviews: 75,
+                    description: "Organize your book collection and display your decor with the Classic Wooden Bookshelf. Its timeless design and robust construction ensure it will be a staple in your home for years to come. Features multiple shelves for ample storage.",
+                    features: [
+                        "Solid wood construction",
+                        "Five spacious shelves",
+                        "Rich, natural finish",
+                        "Easy to assemble",
+                        "Dimensions: 72\"H x 30\"W x 12\"D"
+                    ],
+                    image: "https://placehold.co/700x500/d1e2c4/4caf50?text=Classic+Bookshelf"
+                }
+            };
+
+            // Select product based on ID, default to 'sofa' if not found
+            const product = products[productId] || products['sofa']; 
+
+            // Update the DOM elements with the product's details
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-price').textContent = product.price;
+            document.getElementById('product-rating').textContent = product.rating;
+            document.getElementById('product-reviews').textContent = product.reviews;
+            document.getElementById('product-description').textContent = product.description;
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-image').alt = product.name;
+
+            // Populate key features list
+            const featuresList = document.getElementById('product-features');
+            featuresList.innerHTML = ''; // Clear existing features
+            product.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
