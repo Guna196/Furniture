@@ -1,70 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NX53DQNG');</script>
-<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FurniStore - Home</title>
-    <!-- Tailwind CSS CDN for styling -->
+    <title>FurniShop - Home</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font: Inter for a modern look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif; /* Apply Inter font globally */
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom animations for hero section */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down {
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX53DQNG"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <!-- Header Section -->
-    <header class="bg-white shadow-sm py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <!-- Site Logo/Name linking to Home -->
-            <a href="index.html" class="text-2xl font-bold text-gray-800 rounded-lg p-2 hover:bg-gray-50 transition-colors">FurniStore</a>
-            <!-- Navigation to Product Listing Page -->
-            <nav>
-                <a href="products.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-colors font-medium">Shop Now</a>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold cursor-pointer" onclick="window.location.href='index.html'">
+                FurniShop
+            </h1>
+            <nav class="space-x-6 flex items-center">
+                <a href="index.html" class="hover:text-blue-200 transition-colors">Home</a>
+                <a href="products.html" class="hover:text-blue-200 transition-colors">Products</a>
+                <a href="cart.html" class="hover:text-blue-200 transition-colors">
+                    Cart (<span id="cart-item-count">0</span>)
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section - Main content of the home page -->
-    <main class="flex-grow flex items-center justify-center p-4">
-        <section class="text-center bg-white p-8 md:p-12 lg:p-16 rounded-xl shadow-lg max-w-4xl w-full mx-auto">
-            <!-- Main Heading -->
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
-                Your Home, Elevated with FurniStore
-            </h1>
-            <!-- Subheading/Description -->
-            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Discover a curated collection of modern and timeless furniture pieces that transform your living spaces.
-            </p>
-            <!-- Placeholder Image for visual appeal -->
-            <div class="relative w-full max-w-md mx-auto mb-10 overflow-hidden rounded-lg shadow-xl">
-                <img src="https://placehold.co/800x450/2a9d8f/ffffff?text=Modern+Living+Room" alt="Modern Living Room" class="w-full h-auto rounded-lg object-cover">
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-br from-blue-500 to-purple-600 text-white py-20 md:py-32 overflow-hidden rounded-b-3xl shadow-xl">
+            <div class="container mx-auto text-center relative z-10">
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down">
+                    Transform Your Space
+                </h2>
+                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90 animate-fade-in-up">
+                    Discover exquisite furniture that blends comfort, style, and durability.
+                </p>
+                <button onclick="window.location.href='products.html'" class="bg-white text-blue-700 hover:bg-gray-100 px-8 py-3 text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+                    Shop Now
+                </button>
             </div>
-            <!-- Call to Action Button to Products Page -->
-            <a href="products.html" class="inline-block bg-green-600 text-white text-xl px-10 py-4 rounded-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105 font-semibold">
-                Explore Our Products
-            </a>
+            <!-- Abstract shapes for visual appeal -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-20">
+                <svg class="absolute w-64 h-64 -top-16 -left-16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                <svg class="absolute w-96 h-96 -bottom-32 -right-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="container mx-auto py-16 px-4">
+            <h3 class="text-4xl font-extrabold text-gray-800 mb-12 text-center">Featured Products</h3>
+            <div id="featured-products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Products will be injected here by JavaScript -->
+            </div>
+            <div class="text-center mt-12">
+                <button onclick="window.location.href='products.html'" class="bg-gray-800 text-white hover:bg-gray-900 px-8 py-3 text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+                    Browse All Products
+                </button>
+            </div>
+        </section>
+
+        <!-- About Us/Why Choose Us Section -->
+        <section class="bg-blue-50 py-16 px-4 rounded-t-3xl shadow-inner">
+            <div class="container mx-auto text-center">
+                <h3 class="text-4xl font-extrabold text-gray-800 mb-12">Why Choose FurniShop?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-blue-600 text-5xl mb-4">🛋️</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Quality Craftsmanship</h4>
+                        <p class="text-gray-600">
+                            We handpick furniture crafted with precision and durable materials.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-blue-600 text-5xl mb-4">🚚</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Fast & Free Delivery</h4>
+                        <p class="text-gray-600">
+                            Enjoy hassle-free delivery right to your doorstep, on us!
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-blue-600 text-5xl mb-4">🌟</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Customer Satisfaction</h4>
+                        <p class="text-gray-600">
+                            Your happiness is our priority. We offer excellent support and returns.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 FurniStore. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; <span id="current-year"></span> FurniShop. All rights reserved.</p>
+            <p class="text-sm mt-2">Designed with passion for your home.</p>
         </div>
     </footer>
+
+    <script>
+        // Product Data (shared across pages for simplicity)
+        const products = [
+            {
+                id: '1',
+                name: 'Modern Sofa',
+                price: 1200,
+                description: 'A comfortable and stylish modern sofa, perfect for any living room. Made with high-quality fabric and sturdy wooden frame.',
+                imageUrl: 'https://placehold.co/400x300/E0E0E0/333333?text=Modern+Sofa',
+                category: 'Sofas',
+                dimensions: '80"W x 36"D x 30"H',
+                material: 'Fabric, Wood',
+                features: ['High-density foam cushions', 'Removable covers', 'Solid wood legs'],
+            },
+            {
+                id: '2',
+                name: 'Minimalist Dining Table',
+                price: 850,
+                description: 'Sleek and elegant dining table designed for modern homes. Seats up to 6 people comfortably.',
+                imageUrl: 'https://placehold.co/400x300/D0D0D0/333333?text=Dining+Table',
+                category: 'Tables',
+                dimensions: '60"L x 36"W x 29"H',
+                material: 'MDF, Steel',
+                features: ['Scratch-resistant surface', 'Easy assembly', 'Stable steel base'],
+            },
+            {
+                id: '3',
+                name: 'Ergonomic Office Chair',
+                price: 350,
+                description: 'Boost your productivity with this ergonomic office chair. Fully adjustable for maximum comfort during long working hours.',
+                imageUrl: 'https://placehold.co/400x300/C0C0C0/333333?text=Office+Chair',
+                category: 'Chairs',
+                dimensions: '26"W x 24"D x 45"H',
+                material: 'Mesh, Plastic, Aluminum',
+                features: ['Lumbar support', 'Adjustable armrests', 'Swivel function'],
+            },
+            {
+                id: '4',
+                name: 'King Size Bed Frame',
+                price: 980,
+                description: 'Sturdy and stylish king-size bed frame, providing excellent support for your mattress. Easy to assemble.',
+                imageUrl: 'https://placehold.co/400x300/B0B0B0/333333?text=Bed+Frame',
+                category: 'Beds',
+                dimensions: '82"L x 78"W x 12"H',
+                material: 'Solid Wood',
+                features: ['No box spring needed', 'Under-bed clearance', 'Durable construction'],
+            },
+            {
+                id: '5',
+                name: 'Bookshelf with Storage',
+                price: 420,
+                description: 'Versatile bookshelf with integrated storage compartments. Perfect for organizing books, decor, and more.',
+                imageUrl: 'https://placehold.co/400x300/A0A0A0/333333?text=Bookshelf',
+                category: 'Storage',
+                dimensions: '30"W x 12"D x 70"H',
+                material: 'Particle Board',
+                features: ['Adjustable shelves', 'Closed storage cabinets', 'Anti-tip kit included'],
+            },
+            {
+                id: '6',
+                name: 'Lounge Armchair',
+                price: 650,
+                description: 'Comfortable and chic armchair, ideal for reading nooks or accentuating your living space.',
+                imageUrl: 'https://placehold.co/400x300/909090/333333?text=Armchair',
+                category: 'Chairs',
+                dimensions: '32"W x 34"D x 32"H',
+                material: 'Velvet, Metal',
+                features: ['Plush cushioning', 'Sturdy metal legs', 'Modern design'],
+            },
+        ];
+
+        // Function to get cart items from localStorage
+        function getCartItems() {
+            const cart = localStorage.getItem('furnishop_cart');
+            return cart ? JSON.parse(cart) : [];
+        }
+
+        // Function to update cart item count in header
+        function updateCartItemCount() {
+            const cartItems = getCartItems();
+            const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-item-count').textContent = totalCount;
+        }
+
+        // Render featured products on Home Page
+        function renderFeaturedProducts() {
+            const container = document.getElementById('featured-products-container');
+            const featuredProducts = products.slice(0, 3); // Display first 3 as featured
+
+            featuredProducts.forEach(product => {
+                const productCard = `
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+                        <img
+                            src="${product.imageUrl}"
+                            alt="${product.name}"
+                            class="w-full h-64 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">${product.name}</h4>
+                            <p class="text-gray-600 mb-4 line-clamp-2">${product.description}</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-3xl font-extrabold text-blue-700">$${product.price.toFixed(2)}</span>
+                                <button onclick="window.location.href='product-detail.html?id=${product.id}'"
+                                    class="bg-blue-600 text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 px-4 py-2 rounded-lg font-semibold transition-all duration-200">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', productCard);
+            });
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            updateCartItemCount();
+            renderFeaturedProducts();
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        };
+    </script>
 </body>
 </html>
