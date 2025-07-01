@@ -1,74 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NX53DQNG');</script>
-<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FurniStore - Order Placed!</title>
+    <title>FurniShop - Order Placed</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX53DQNG"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<body class="bg-gray-50">
+
     <!-- Header -->
-    <header class="bg-white shadow-sm py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-800 rounded-lg p-2 hover:bg-gray-50 transition-colors">FurniStore</a>
-            <nav>
-                <a href="products.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg shadow-sm hover:bg-gray-300 transition-colors font-medium mr-2">Shop More</a>
-                <a href="index.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md font-medium">Home</a>
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold cursor-pointer" onclick="window.location.href='index.html'">
+                FurniShop
+            </h1>
+            <nav class="space-x-6 flex items-center">
+                <a href="index.html" class="hover:text-blue-200 transition-colors">Home</a>
+                <a href="products.html" class="hover:text-blue-200 transition-colors">Products</a>
+                <a href="cart.html" class="hover:text-blue-200 transition-colors">
+                    Cart (<span id="cart-item-count">0</span>)
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- Order Placed Section -->
-    <main class="flex-grow p-4 flex items-center justify-center">
-        <section class="text-center bg-white p-8 md:p-12 lg:p-16 rounded-xl shadow-lg max-w-xl w-full mx-auto">
-            <svg class="mx-auto text-green-500 mb-6" xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-            </svg>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
-                Order Placed Successfully!
-            </h1>
-            <p class="text-lg md:text-xl text-gray-700 mb-6">
-                Thank you for your purchase from FurniStore. Your order has been confirmed and will be processed shortly.
+    <main class="min-h-screen flex items-center justify-center bg-gray-50 font-inter py-12 px-4">
+        <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 text-center max-w-2xl mx-auto">
+            <div class="text-green-500 text-7xl mb-6">🎉</div>
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-4">Order Placed Successfully!</h2>
+            <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+                Thank you for your purchase from FurniShop. Your order has been confirmed and will be processed shortly.
             </p>
-            <p class="text-md text-gray-600 mb-8">
-                You will receive an email confirmation with your order details and tracking information.
+            <p class="text-gray-600 text-md mb-8">
+                An email confirmation with your order details has been sent to your inbox.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="products.html" class="bg-blue-600 text-white text-xl px-8 py-4 rounded-lg shadow-xl hover:bg-blue-700 transition-transform transform hover:scale-105 font-semibold text-center">
-                    Continue Shopping
-                </a>
-                <a href="index.html" class="bg-gray-200 text-gray-800 text-xl px-8 py-4 rounded-lg shadow-xl hover:bg-gray-300 transition-transform transform hover:scale-105 font-semibold text-center">
-                    Back to Home
-                </a>
-            </div>
-        </section>
+            <button onclick="window.location.href='index.html'"
+                class="bg-blue-600 text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 px-8 py-4 text-xl rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+                Continue Shopping
+            </button>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 FurniStore. All rights reserved.</p>
+    <footer class="bg-gray-800 text-white p-6 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; <span id="current-year"></span> FurniShop. All rights reserved.</p>
+            <p class="text-sm mt-2">Designed with passion for your home.</p>
         </div>
     </footer>
+
+    <script>
+        // Product Data (shared across pages for simplicity)
+        const products = [
+            {
+                id: '1',
+                name: 'Modern Sofa',
+                price: 1200,
+                description: 'A comfortable and stylish modern sofa, perfect for any living room. Made with high-quality fabric and sturdy wooden frame.',
+                imageUrl: 'https://placehold.co/400x300/E0E0E0/333333?text=Modern+Sofa',
+                category: 'Sofas',
+                dimensions: '80"W x 36"D x 30"H',
+                material: 'Fabric, Wood',
+                features: ['High-density foam cushions', 'Removable covers', 'Solid wood legs'],
+            },
+            {
+                id: '2',
+                name: 'Minimalist Dining Table',
+                price: 850,
+                description: 'Sleek and elegant dining table designed for modern homes. Seats up to 6 people comfortably.',
+                imageUrl: 'https://placehold.co/400x300/D0D0D0/333333?text=Dining+Table',
+                category: 'Tables',
+                dimensions: '60"L x 36"W x 29"H',
+                material: 'MDF, Steel',
+                features: ['Scratch-resistant surface', 'Easy assembly', 'Stable steel base'],
+            },
+            {
+                id: '3',
+                name: 'Ergonomic Office Chair',
+                price: 350,
+                description: 'Boost your productivity with this ergonomic office chair. Fully adjustable for maximum comfort during long working hours.',
+                imageUrl: 'https://placehold.co/400x300/C0C0C0/333333?text=Office+Chair',
+                category: 'Chairs',
+                dimensions: '26"W x 24"D x 45"H',
+                material: 'Mesh, Plastic, Aluminum',
+                features: ['Lumbar support', 'Adjustable armrests', 'Swivel function'],
+            },
+            {
+                id: '4',
+                name: 'King Size Bed Frame',
+                price: 980,
+                description: 'Sturdy and stylish king-size bed frame, providing excellent support for your mattress. Easy to assemble.',
+                imageUrl: 'https://placehold.co/400x300/B0B0B0/333333?text=Bed+Frame',
+                category: 'Beds',
+                dimensions: '82"L x 78"W x 12"H',
+                material: 'Solid Wood',
+                features: ['No box spring needed', 'Under-bed clearance', 'Durable construction'],
+            },
+            {
+                id: '5',
+                name: 'Bookshelf with Storage',
+                price: 420,
+                description: 'Versatile bookshelf with integrated storage compartments. Perfect for organizing books, decor, and more.',
+                imageUrl: 'https://placehold.co/400x300/A0A0A0/333333?text=Bookshelf',
+                category: 'Storage',
+                dimensions: '30"W x 12"D x 70"H',
+                material: 'Particle Board',
+                features: ['Adjustable shelves', 'Closed storage cabinets', 'Anti-tip kit included'],
+            },
+            {
+                id: '6',
+                name: 'Lounge Armchair',
+                price: 650,
+                description: 'Comfortable and chic armchair, ideal for reading nooks or accentuating your living space.',
+                imageUrl: 'https://placehold.co/400x300/909090/333333?text=Armchair',
+                category: 'Chairs',
+                dimensions: '32"W x 34"D x 32"H',
+                material: 'Velvet, Metal',
+                features: ['Plush cushioning', 'Sturdy metal legs', 'Modern design'],
+            },
+        ];
+
+        // Function to get cart items from localStorage
+        function getCartItems() {
+            const cart = localStorage.getItem('furnishop_cart');
+            return cart ? JSON.parse(cart) : [];
+        }
+
+        // Function to update cart item count in header
+        function updateCartItemCount() {
+            const cartItems = getCartItems();
+            const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-item-count').textContent = totalCount;
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            updateCartItemCount();
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        };
+    </script>
 </body>
 </html>
-
